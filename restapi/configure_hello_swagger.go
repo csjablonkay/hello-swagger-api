@@ -13,13 +13,13 @@ import (
 	"github.com/csjablonkay/hello-swagger-api/restapi/operations"
 )
 
-//go:generate swagger generate server --target ../../hello-swagger-api --name GithubComCsjablonkayHelloSwagger --spec ../swagger.yaml --exclude-main
+//go:generate swagger generate server --target ../../hello-swagger-api --name HelloSwagger --spec ../swagger.yaml --exclude-main
 
-func configureFlags(api *operations.GithubComCsjablonkayHelloSwaggerAPI) {
+func configureFlags(api *operations.HelloSwaggerAPI) {
 	// api.CommandLineOptionsGroups = []swag.CommandLineOptionsGroup{ ... }
 }
 
-func configureAPI(api *operations.GithubComCsjablonkayHelloSwaggerAPI) http.Handler {
+func configureAPI(api *operations.HelloSwaggerAPI) http.Handler {
 	// configure the api here
 	api.ServeError = errors.ServeError
 

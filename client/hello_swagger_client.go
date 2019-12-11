@@ -14,7 +14,7 @@ import (
 	"github.com/csjablonkay/hello-swagger-api/client/operations"
 )
 
-// Default github com csjablonkay hello swagger HTTP client.
+// Default hello swagger HTTP client.
 var Default = NewHTTPClient(nil)
 
 const (
@@ -29,14 +29,14 @@ const (
 // DefaultSchemes are the default schemes found in Meta (info) section of spec file
 var DefaultSchemes = []string{"http"}
 
-// NewHTTPClient creates a new github com csjablonkay hello swagger HTTP client.
-func NewHTTPClient(formats strfmt.Registry) *GithubComCsjablonkayHelloSwagger {
+// NewHTTPClient creates a new hello swagger HTTP client.
+func NewHTTPClient(formats strfmt.Registry) *HelloSwagger {
 	return NewHTTPClientWithConfig(formats, nil)
 }
 
-// NewHTTPClientWithConfig creates a new github com csjablonkay hello swagger HTTP client,
+// NewHTTPClientWithConfig creates a new hello swagger HTTP client,
 // using a customizable transport config.
-func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *GithubComCsjablonkayHelloSwagger {
+func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *HelloSwagger {
 	// ensure nullable parameters have default
 	if cfg == nil {
 		cfg = DefaultTransportConfig()
@@ -47,14 +47,14 @@ func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *Git
 	return New(transport, formats)
 }
 
-// New creates a new github com csjablonkay hello swagger client
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *GithubComCsjablonkayHelloSwagger {
+// New creates a new hello swagger client
+func New(transport runtime.ClientTransport, formats strfmt.Registry) *HelloSwagger {
 	// ensure nullable parameters have default
 	if formats == nil {
 		formats = strfmt.Default
 	}
 
-	cli := new(GithubComCsjablonkayHelloSwagger)
+	cli := new(HelloSwagger)
 	cli.Transport = transport
 
 	cli.Operations = operations.New(transport, formats)
@@ -101,15 +101,15 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 	return cfg
 }
 
-// GithubComCsjablonkayHelloSwagger is a client for github com csjablonkay hello swagger
-type GithubComCsjablonkayHelloSwagger struct {
+// HelloSwagger is a client for hello swagger
+type HelloSwagger struct {
 	Operations *operations.Client
 
 	Transport runtime.ClientTransport
 }
 
 // SetTransport changes the transport on the client and all its subresources
-func (c *GithubComCsjablonkayHelloSwagger) SetTransport(transport runtime.ClientTransport) {
+func (c *HelloSwagger) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
 
 	c.Operations.SetTransport(transport)
