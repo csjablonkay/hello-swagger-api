@@ -10,7 +10,7 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	models "hello-swagger-api/models"
+	models "github.com/csjablonkay/hello-swagger-api/models"
 )
 
 // GetHostnameOKCode is the HTTP code returned for type GetHostnameOK

@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "hello-swagger-api/models"
+	models "github.com/csjablonkay/hello-swagger-api/models"
 )
 
 // GetHostnameReader is a Reader for the GetHostname structure.

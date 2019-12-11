@@ -10,16 +10,16 @@ import (
 	runtime "github.com/go-openapi/runtime"
 	middleware "github.com/go-openapi/runtime/middleware"
 
-	"hello-swagger-api/restapi/operations"
+	"github.com/csjablonkay/hello-swagger-api/restapi/operations"
 )
 
-//go:generate swagger generate server --target ../../hello-swagger-api --name HelloSwagger --spec ../swagger.yaml --exclude-main
+//go:generate swagger generate server --target ../../hello-swagger-api --name GithubComCsjablonkayHelloSwagger --spec ../swagger.yaml --exclude-main
 
-func configureFlags(api *operations.HelloSwaggerAPI) {
+func configureFlags(api *operations.GithubComCsjablonkayHelloSwaggerAPI) {
 	// api.CommandLineOptionsGroups = []swag.CommandLineOptionsGroup{ ... }
 }
 
-func configureAPI(api *operations.HelloSwaggerAPI) http.Handler {
+func configureAPI(api *operations.GithubComCsjablonkayHelloSwaggerAPI) http.Handler {
 	// configure the api here
 	api.ServeError = errors.ServeError
 

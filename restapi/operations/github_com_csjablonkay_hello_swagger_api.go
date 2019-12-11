@@ -20,9 +20,9 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewHelloSwaggerAPI creates a new HelloSwagger instance
-func NewHelloSwaggerAPI(spec *loads.Document) *HelloSwaggerAPI {
-	return &HelloSwaggerAPI{
+// NewGithubComCsjablonkayHelloSwaggerAPI creates a new GithubComCsjablonkayHelloSwagger instance
+func NewGithubComCsjablonkayHelloSwaggerAPI(spec *loads.Document) *GithubComCsjablonkayHelloSwaggerAPI {
+	return &GithubComCsjablonkayHelloSwaggerAPI{
 		handlers:            make(map[string]map[string]http.Handler),
 		formats:             strfmt.Default,
 		defaultConsumes:     "application/json",
@@ -44,8 +44,8 @@ func NewHelloSwaggerAPI(spec *loads.Document) *HelloSwaggerAPI {
 	}
 }
 
-/*HelloSwaggerAPI the hello swagger API */
-type HelloSwaggerAPI struct {
+/*GithubComCsjablonkayHelloSwaggerAPI the github com csjablonkay hello swagger API */
+type GithubComCsjablonkayHelloSwaggerAPI struct {
 	spec            *loads.Document
 	context         *middleware.Context
 	handlers        map[string]map[string]http.Handler
@@ -95,42 +95,42 @@ type HelloSwaggerAPI struct {
 }
 
 // SetDefaultProduces sets the default produces media type
-func (o *HelloSwaggerAPI) SetDefaultProduces(mediaType string) {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) SetDefaultProduces(mediaType string) {
 	o.defaultProduces = mediaType
 }
 
 // SetDefaultConsumes returns the default consumes media type
-func (o *HelloSwaggerAPI) SetDefaultConsumes(mediaType string) {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) SetDefaultConsumes(mediaType string) {
 	o.defaultConsumes = mediaType
 }
 
 // SetSpec sets a spec that will be served for the clients.
-func (o *HelloSwaggerAPI) SetSpec(spec *loads.Document) {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) SetSpec(spec *loads.Document) {
 	o.spec = spec
 }
 
 // DefaultProduces returns the default produces media type
-func (o *HelloSwaggerAPI) DefaultProduces() string {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) DefaultProduces() string {
 	return o.defaultProduces
 }
 
 // DefaultConsumes returns the default consumes media type
-func (o *HelloSwaggerAPI) DefaultConsumes() string {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) DefaultConsumes() string {
 	return o.defaultConsumes
 }
 
 // Formats returns the registered string formats
-func (o *HelloSwaggerAPI) Formats() strfmt.Registry {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) Formats() strfmt.Registry {
 	return o.formats
 }
 
 // RegisterFormat registers a custom format validator
-func (o *HelloSwaggerAPI) RegisterFormat(name string, format strfmt.Format, validator strfmt.Validator) {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) RegisterFormat(name string, format strfmt.Format, validator strfmt.Validator) {
 	o.formats.Add(name, format, validator)
 }
 
-// Validate validates the registrations in the HelloSwaggerAPI
-func (o *HelloSwaggerAPI) Validate() error {
+// Validate validates the registrations in the GithubComCsjablonkayHelloSwaggerAPI
+func (o *GithubComCsjablonkayHelloSwaggerAPI) Validate() error {
 	var unregistered []string
 
 	if o.JSONConsumer == nil {
@@ -153,19 +153,19 @@ func (o *HelloSwaggerAPI) Validate() error {
 }
 
 // ServeErrorFor gets a error handler for a given operation id
-func (o *HelloSwaggerAPI) ServeErrorFor(operationID string) func(http.ResponseWriter, *http.Request, error) {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) ServeErrorFor(operationID string) func(http.ResponseWriter, *http.Request, error) {
 	return o.ServeError
 }
 
 // AuthenticatorsFor gets the authenticators for the specified security schemes
-func (o *HelloSwaggerAPI) AuthenticatorsFor(schemes map[string]spec.SecurityScheme) map[string]runtime.Authenticator {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) AuthenticatorsFor(schemes map[string]spec.SecurityScheme) map[string]runtime.Authenticator {
 
 	return nil
 
 }
 
 // Authorizer returns the registered authorizer
-func (o *HelloSwaggerAPI) Authorizer() runtime.Authorizer {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) Authorizer() runtime.Authorizer {
 
 	return nil
 
@@ -173,7 +173,7 @@ func (o *HelloSwaggerAPI) Authorizer() runtime.Authorizer {
 
 // ConsumersFor gets the consumers for the specified media types.
 // MIME type parameters are ignored here.
-func (o *HelloSwaggerAPI) ConsumersFor(mediaTypes []string) map[string]runtime.Consumer {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) ConsumersFor(mediaTypes []string) map[string]runtime.Consumer {
 	result := make(map[string]runtime.Consumer, len(mediaTypes))
 	for _, mt := range mediaTypes {
 		switch mt {
@@ -190,7 +190,7 @@ func (o *HelloSwaggerAPI) ConsumersFor(mediaTypes []string) map[string]runtime.C
 
 // ProducersFor gets the producers for the specified media types.
 // MIME type parameters are ignored here.
-func (o *HelloSwaggerAPI) ProducersFor(mediaTypes []string) map[string]runtime.Producer {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) ProducersFor(mediaTypes []string) map[string]runtime.Producer {
 	result := make(map[string]runtime.Producer, len(mediaTypes))
 	for _, mt := range mediaTypes {
 		switch mt {
@@ -206,7 +206,7 @@ func (o *HelloSwaggerAPI) ProducersFor(mediaTypes []string) map[string]runtime.P
 }
 
 // HandlerFor gets a http.Handler for the provided operation method and path
-func (o *HelloSwaggerAPI) HandlerFor(method, path string) (http.Handler, bool) {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) HandlerFor(method, path string) (http.Handler, bool) {
 	if o.handlers == nil {
 		return nil, false
 	}
@@ -221,8 +221,8 @@ func (o *HelloSwaggerAPI) HandlerFor(method, path string) (http.Handler, bool) {
 	return h, ok
 }
 
-// Context returns the middleware context for the hello swagger API
-func (o *HelloSwaggerAPI) Context() *middleware.Context {
+// Context returns the middleware context for the github com csjablonkay hello swagger API
+func (o *GithubComCsjablonkayHelloSwaggerAPI) Context() *middleware.Context {
 	if o.context == nil {
 		o.context = middleware.NewRoutableContext(o.spec, o, nil)
 	}
@@ -230,7 +230,7 @@ func (o *HelloSwaggerAPI) Context() *middleware.Context {
 	return o.context
 }
 
-func (o *HelloSwaggerAPI) initHandlerCache() {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) initHandlerCache() {
 	o.Context() // don't care about the result, just that the initialization happened
 
 	if o.handlers == nil {
@@ -246,7 +246,7 @@ func (o *HelloSwaggerAPI) initHandlerCache() {
 
 // Serve creates a http handler to serve the API over HTTP
 // can be used directly in http.ListenAndServe(":8000", api.Serve(nil))
-func (o *HelloSwaggerAPI) Serve(builder middleware.Builder) http.Handler {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) Serve(builder middleware.Builder) http.Handler {
 	o.Init()
 
 	if o.Middleware != nil {
@@ -256,18 +256,18 @@ func (o *HelloSwaggerAPI) Serve(builder middleware.Builder) http.Handler {
 }
 
 // Init allows you to just initialize the handler cache, you can then recompose the middleware as you see fit
-func (o *HelloSwaggerAPI) Init() {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) Init() {
 	if len(o.handlers) == 0 {
 		o.initHandlerCache()
 	}
 }
 
 // RegisterConsumer allows you to add (or override) a consumer for a media type.
-func (o *HelloSwaggerAPI) RegisterConsumer(mediaType string, consumer runtime.Consumer) {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) RegisterConsumer(mediaType string, consumer runtime.Consumer) {
 	o.customConsumers[mediaType] = consumer
 }
 
 // RegisterProducer allows you to add (or override) a producer for a media type.
-func (o *HelloSwaggerAPI) RegisterProducer(mediaType string, producer runtime.Producer) {
+func (o *GithubComCsjablonkayHelloSwaggerAPI) RegisterProducer(mediaType string, producer runtime.Producer) {
 	o.customProducers[mediaType] = producer
 }
